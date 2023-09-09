@@ -10,7 +10,7 @@ void sieve() {
    for(int i = 3; i * i <= N; i += 2) {
       if(!f[i]) {
       for(int j = i * i; j <= N; j += 2 * i) f[j] = true;
-    }
+    } // i*i because (i+i) always a even number large from 2, which is already cut in 2 er condition
   }
   vector<int> prime;
   for(int i = 2; i <= N; i++) {
