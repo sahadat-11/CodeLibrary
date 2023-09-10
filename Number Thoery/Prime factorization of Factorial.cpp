@@ -29,7 +29,7 @@ int main() {
       for(auto p : prime) {
             if(p > n) break;
             ll exp = 0;
-            for(ll i = 1; i <= n; i++) {
+            for(ll i = p; i <= n; i += p) {
                ll x = i;
                while(x % p == 0) {
                   exp++;
@@ -72,7 +72,7 @@ int main() {
       for(ll p = 1; p <= n; p++) {
          if(!f[p]) {
             ll exp = 0;
-            for(ll i = 1; i <= n; i++) {
+            for(ll i = p; i <= n; i += p) {
                ll x = i;
                while(x % p == 0) {
                   exp++;
