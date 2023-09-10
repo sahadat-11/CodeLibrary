@@ -30,3 +30,39 @@ int main() {
    }
   return 0;
  }
+ 
+
+//In The Name of ALLAH
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define mod 1000000007
+const int N = 100000;
+bool f[N];
+void sieve() {
+   f[0]=f[1]=true; 
+
+   for(int i = 2; i * i <= N; i++) {
+      if(!f[i]){
+         for(int j = i * i; j <= N;j += i) f[j]=true;
+      }
+   }
+}
+bool ok(int x) {
+   sieve();
+   for(int i = 2;i < x; i++) {
+      if((!f[i]) and (!f[x-i])) return true;
+   }
+   return false;
+}
+void goldbach(int n) {
+   for(int i = 1; i <= n; i++){
+      if(ok(i)) cout << i << endl;
+   }
+}
+int main() {
+     int n; cin >> n;
+     goldbach(n);
+    
+    return 0;
+ }
