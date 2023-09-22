@@ -37,3 +37,26 @@ int main() {
    cout << 2 * (1LL << mask) - 1;
    return 0;
 }
+
+//In The Name of ALLAH
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  ll l, r; cin >> l >> r;
+  if(l == r) {
+    cout << 0 << "\n";
+    return 0;
+  }
+  ll x = l^r;
+  ll ind = 0;
+  for(int i = 0; i < 64; i++) {
+     if(x & (1ll << i)) {
+       ind = i;
+     }
+  }
+  cout << 2 * (1ll << ind) - 1 << endl;
+  return 0;
+}
