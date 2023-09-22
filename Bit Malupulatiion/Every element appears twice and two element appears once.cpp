@@ -39,3 +39,5 @@ for(int i = 0; i < n; i++) {
 cout << XOR1 << " " << XOR2 << endl;
 return 0;
 }
+
+ // https://prnt.sc/ntlngALw3Pib 

@@ -34,3 +34,5 @@ int main() {
    cout << cnt << endl;
    return 0;
 }
+
+// https://prnt.sc/oFzKjPE-inPZ

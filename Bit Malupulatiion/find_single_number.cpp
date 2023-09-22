@@ -38,3 +38,5 @@ int main() {
    return 0;
 }
 // O(n log(n));
+
+// https://prnt.sc/S1f9ZdQbxb_q

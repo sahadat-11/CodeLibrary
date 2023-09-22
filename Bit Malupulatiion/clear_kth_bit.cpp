@@ -11,3 +11,4 @@ int main() {
    cout << n << endl;
    return 0;
 }
+// https://prnt.sc/6uoXTbSOb_Y9

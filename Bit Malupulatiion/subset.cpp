@@ -34,3 +34,5 @@ for(auto subset : all_subsets) {
 }
 return 0;
 }
+// https://prnt.sc/VXizd3fD0nfm 
+

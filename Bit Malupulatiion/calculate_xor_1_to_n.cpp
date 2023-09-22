@@ -31,3 +31,4 @@ int main() {
    return 0;
 }
 // O (1);
+// https://prnt.sc/7qcu2lsmJjYU 

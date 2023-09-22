@@ -34,3 +34,4 @@ int main() {
    cout << x << endl;
    return 0;
 }
+// https://prnt.sc/dM02-wNBcIB3

@@ -60,3 +60,5 @@ int main() {
   cout << 2 * (1ll << ind) - 1 << endl;
   return 0;
 }
+
+// https://prnt.sc/DHtxd0rojvxS 

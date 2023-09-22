@@ -51,3 +51,4 @@ int main() {
    else cout << "NO\n";
    return 0;
 }
+// https://prnt.sc/S1f9ZdQbxb_q
