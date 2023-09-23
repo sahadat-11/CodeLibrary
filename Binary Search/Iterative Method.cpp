@@ -23,6 +23,32 @@ int main() {
   sort(a, a + n);
   int x = binary(a, n , target);
   if(x == -1) cout << "NOT FOUND";
-  else cout << "FOUND IN " << x << "INDEX";
+  else cout << "FOUND IN " << x << " INDEX";
+  return 0;
+}
+
+// approach 2:
+//In The Name of ALLAH
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+int binary(int a[], int n, int x) {
+   int p = 0;
+   for(int i = n; i >= 1; i /= 2) {
+   	 while(p + i < n and a[p + i] <= x) p += i;
+   }
+   if(a[p] == x) return p;
+   return -1;
+}
+int main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  int n; cin >> n; int a[n];
+  for(int i = 0; i < n; i++) cin >> a[i];
+  int target; cin >> target;
+  sort(a, a + n);
+  int x = binary(a, n , target);
+  if(x == -1) cout << "NOT FOUND";
+  else cout << "FOUND IN " << x << " INDEX";
   return 0;
 }

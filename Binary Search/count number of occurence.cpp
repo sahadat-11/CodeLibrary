@@ -73,3 +73,21 @@ int main() {
     cout << upper_bound(a, a + n, x) - lower_bound(a, a + n, x);
     return 0;
 }
+
+// approach 4:
+//In The Name of ALLAH
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	int n; cin >> n; int a[n];
+	for(int i = 0; i < n; i++) cin >> a[i];
+	int x; cin >> x;
+    int p = -1, q = -1;
+    for(int i = n; i >= 1; i /= 2) {
+    	while(i + p < n and a[i + p] < x) p += i;
+    	while(i + q < n and a[i + q] <= x) q += i;
+    }
+    cout << q - p << endl;
+    return 0;
+}
+// its also work
