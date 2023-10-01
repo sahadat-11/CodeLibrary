@@ -37,3 +37,5 @@ int main() {
    
   return 0;
 }
+// problem
+//https://www.hackerearth.com/practice/math/number-theory/basic-number-theory-1/practice-problems/algorithm/name-count/ 

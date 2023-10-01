@@ -1,38 +1,38 @@
-// //In The Name of ALLAH
-// #include<bits/stdc++.h>
-// using namespace std;
-// #define ll long long
-// int main() {
-  // ios_base::sync_with_stdio(0);
-  // cin.tie(0);
-  // int base, power; cin >> base >> power;
-  // cout << pow(base, power); // it return double, so overflow
-  // int ans = 1;
-  // for(int i = 1; i <= power; i++) {
-  	// ans *= base;
-  // }
-  // cout << ans << "\n";
-  // return 0;
-// }
-// // O(power)
-// 
+//In The Name of ALLAH
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main() {
+  ios_a::sync_with_stdio(0);
+  cin.tie(0);
+  int a, b; cin >> a >> b;
+  cout << pow(a, b); // it return double, so overflow
+  int ans = 1;
+  for(int i = 1; i <= b; i++) {
+  	ans *= a;
+  }
+  cout << ans << "\n";
+  return 0;
+}
+// O(b)
+
 
 //In The Name of ALLAH
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
 const int mod = 1e9 + 7;
-// base <= 10^9, power <= 10^9;
-int binexp(int base, int power) {
+// a <= 10^9, b <= 10^9;
+int binexp(int a, int b) {
 	int ans = 1;
-	while(power) {
-		if(power & 1) { // if power in odd
-			ans *= base;
-			power--;
+	while(b) {
+		if(b & 1) { // if b in odd
+			ans *= a;
+			b--;
 		}
 		else {
-			base *= base;
-			power >>= 1; // power / 2;
+			a *= a;
+			b >>= 1; // b / 2;
 		}
 	}
 	return ans;
@@ -40,8 +40,8 @@ int binexp(int base, int power) {
 int main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
-  int base, power; cin >> base >> power;
-  cout << binexp(base, power);
+  int a, b; cin >> a >> b;
+  cout << binexp(a, b);
   return 0;
 }
 

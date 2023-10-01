@@ -8,11 +8,11 @@ int binexp(int a, int b) {
 	int ans = 1;
 	while(b) {
 		if(b & 1) { // if b in odd
-			ans = (1ll * (ans % mod) * (a % mod)) % mod; // type cast for integer overflow
+			ans = (ans * 1ll * a) % mod; // type cast for integer overflow
 			b--;
 		}
 		else {
-			a = ((a % mod) * (a % mod)) % mod;
+			a = (a * 1ll * a) % mod;
 			b >>= 1; // b / 2;
 		}
 	}
@@ -74,7 +74,7 @@ int main() {
   return 0; 
 } 
 // O(log^2(N));
-
+// https://prnt.sc/BoD81LpIuEmq
 
 //In The Name of ALLAH
 #include<bits/stdc++.h>
@@ -85,11 +85,11 @@ ll binexp(ll a, ll b) {
 	ll ans = 1;
 	while(b) {
 		if(b & 1) { // if b in odd
-			ans = ((ans % mod) * (a % mod)) % mod;
+			ans = (ans * 1ll * a) % mod; // type cast for integer overflow
 			b--;
 		}
 		else {
-			a = ((a % mod) * (a % mod)) % mod;
+			a = (a * 1ll * a) % mod;
 			b >>= 1; // b / 2;
 		}
 	}
