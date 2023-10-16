@@ -80,4 +80,5 @@ int main() {
   cout << euler(n);
   return 0;
 }
+// o(sqrt(n))
 // https://prnt.sc/lRUiaLUepq-q 

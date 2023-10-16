@@ -2,16 +2,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
-ll binary_exponential(ll base, ll power, ll mod) {
+ll modexp(ll a, ll b, ll mod) {
 	ll ans = 1;
-	while(power) {
-		if(power & 1) { // if power in odd
-			ans = (ans % mod) * (base % mod) % mod;
-			power--;
+	while(b) {
+		if(b & 1) { // if b in odd
+			ans = (ans * 1ll * a) % mod; // type cast for integer overflow
+			b--;
 		}
 		else {
-			base = (base % mod) * (base % mod) % mod;
-			power >>= 1; // power / 2;
+			a = (a * 1ll * a) % mod;
+			b >>= 1; // b / 2;
 		}
 	}
 	return ans;
@@ -19,8 +19,8 @@ ll binary_exponential(ll base, ll power, ll mod) {
 int main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
-  ll base, power, mod; cin >> base >> power >> mod;
-  cout << binary_exponential(base, power, mod);
+  ll a, b, mod; cin >> a >> b >> mod;
+  cout << modexp(a, b, mod);
   return 0;
 }
 

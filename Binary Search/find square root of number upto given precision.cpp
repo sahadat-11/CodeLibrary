@@ -15,7 +15,7 @@ using namespace std;
 double eps = 1e-6; // 10^-6// 0.000001
 int main() {
 	double n; cin >> n;
-	double l = 0, h = n;n
+	double l = 0, h = n;
 	while(h - l > eps) {
 		double mid = l + (h - l) / 2;
 		if(mid * mid < n) {
