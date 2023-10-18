@@ -23,13 +23,18 @@ int main() {
    int t; cin >> t;
    while(t--) {
    	 ll l, r; cin >> l >> r;
+   	 if(l == 1) l++;
    	 ll mx = r - l + 1;
    	 bool a[mx + 1] = {false};
    	 for(auto u : prime) {
    	 	if(u * u <= r) {
    	 		ll x = ((l + u - 1) / u) * u; // ceil value;
+   	 		//ll x = (l / u) * u;
+   	 		//if(x < l) x += u;
    	 		for(ll i = x; i <= r; i += u) {
-   	 			a[i - l] = true;;
+   	 			if(i != u) {
+   	 				a[i - l] = true;
+   	 			}
    	 		}
    	 	}
    	 }
@@ -39,3 +44,4 @@ int main() {
    }
    return 0;
 }
+//https://prnt.sc/ONwAROjsdmzt 
