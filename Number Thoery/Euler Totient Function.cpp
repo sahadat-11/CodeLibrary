@@ -29,15 +29,15 @@ int main() {
     		while(n % i == 0) {
     			n /= i;
     		}
-    		res *= (i - 1);
-    		res /= i;
-    		// res -= res / i;
+    		// res *= (i - 1);
+    		// res /= i;
+    		res -= res / i;
     	}
     }
     if(n > 1) {
-    	res *= (n - 1);
-    	res /= n;
-    	// res -= res / n;
+    	//res *= (n - 1);
+    	//res /= n;
+    	res -= res / n;
     }
     cout << res << endl;
     return 0;
@@ -56,15 +56,15 @@ int phi(int n) {
     		while(n % i == 0) {
     			n /= i;
     		}
-    		res *= (i - 1);
-    		res /= i;
-    		// res -= res / i;
+    		// res *= (i - 1);
+    		// res /= i;
+    		res -= res / i;
     	}
     }
     if(n > 1) {
-    	res *= (n - 1);
-    	res /= n;
-    	// res -= res / n;
+    	// res *= (n - 1);
+    	// res /= n;
+    	res -= res / n;
     }
     return res;
 }
@@ -94,9 +94,9 @@ int main() {
     for(int i = 2; i <= n; i++) {
     	if(phi[i] == i) {
     		for(int j = i; j <= n; j += i) {
-    			phi[j] /= i;
-    			phi[j] *= (i - 1);
-    			// phi[j] -= phi[j] / i;
+    			// phi[j] /= i;
+    			// phi[j] *= (i - 1);
+    			phi[j] -= phi[j] / i;
     		}
     	}
     }
