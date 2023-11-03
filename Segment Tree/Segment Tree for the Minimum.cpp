@@ -16,7 +16,7 @@ void build(int node, int b, int e) {
 	int mid = (b + e) / 2;
 	build(l, b, mid);
 	build(r, mid + 1, e);
-	t[node] = min(t[l], t[r]);n
+	t[node] = min(t[l], t[r]);
 }
 int query(int node, int b, int e, int i, int j) {
 	if(i > e or j < b) return inf;
@@ -55,7 +55,7 @@ int main() {
     		update(1, 1, n, i, x);
     	}
     	else {
-    		int i, j; cin >> i >> j;n
+    		int i, j; cin >> i >> j;
     		j--; // i to (j - 1)
     		i++; j++;// for 1 indexing
     		int ans = query(1, 1, n, i, j);

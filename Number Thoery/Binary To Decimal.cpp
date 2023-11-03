@@ -13,6 +13,6 @@ int main() {
    }
    cout << dec << "\n";
    cout << stoi(binary, 0, 2) << endl; // approach 2
-    return 0;
+   return 0;
 }
 //Complexity : O(string length)
