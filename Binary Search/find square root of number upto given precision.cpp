@@ -1,13 +1,13 @@
-//In The Name of ALLAH
-#include<bits/stdc++.h>
-using namespace std;
-int main() {
-	int n; cin >> n;
-	int x = sqrtl(n);
-	cout << x << endl;
-	
-    return 0;
-}
+// //In The Name of ALLAH
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main() {
+	// int n; cin >> n;
+	// int x = sqrtl(n);
+	// cout << x << endl;
+// 	
+    // return 0;
+// }
 
 //In The Name of ALLAH
 #include<bits/stdc++.h>
@@ -20,8 +20,9 @@ int main() {
 		double mid = l + (h - l) / 2;
 		if(mid * mid < n) {
 			l = mid;
-		}  
+		}
 		else h = mid;
+		cout << mid << endl;
 	}
 	cout << l << " " << h << " ";
 	cout << pow(n, 1.0 / 2); // work in same
