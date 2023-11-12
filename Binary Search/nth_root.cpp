@@ -218,3 +218,5 @@ int main() {
 // return nth root value if it is perfect nth root number
 // else rerurn -1;
 //https://www.codingninjas.com/studio/problems/nth-root-of-m_1062679?utm_source=striver&utm_medium=website&utm_campaign=codestudio_a_zcourse&leftPanelTabValue=PROBLEM
+//https://prnt.sc/4zt4EyWWW8d5
+//https://prnt.sc/Rd7-FnZWeD1n
