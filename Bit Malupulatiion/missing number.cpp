@@ -32,7 +32,7 @@ int main() {
   cout << sum2 - sum1 << "\n";
   return 0; 
 }
-O(n);// that can be overflow if n is large
+//O(n);// that can be overflow if n is large
 
 //In The Name of ALLAH
 #include <bits/stdc++.h>
