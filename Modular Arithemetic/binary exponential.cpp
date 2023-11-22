@@ -26,14 +26,11 @@ const int mod = 1e9 + 7;
 int binexp(int a, int b) {
 	int ans = 1;
 	while(b) {
-		if(b & 1) { // if b in odd
+		if(b & 1) { // if b in odd(if 0th bit is set)
 			ans *= a;
-			b--;
 		}
-		else {
-			a *= a;
-			b >>= 1; // b / 2;
-		}
+		a *= a;
+		b >>= 1; // b / 2;
 	}
 	return ans;
 }
@@ -49,3 +46,4 @@ int main() {
 // https://prnt.sc/GRzQPneUZBpc
 // https://prnt.sc/X_IGW9oxTP0k
 // https://prnt.sc/Esqh6L4MTwNY
+// https://prnt.sc/EqH54bMpOFlT

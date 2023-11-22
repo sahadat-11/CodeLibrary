@@ -9,12 +9,9 @@ int binexp(int a, int b) {
 	while(b) {
 		if(b & 1) { // if b in odd
 			ans = (ans * 1ll * a) % mod; // type cast for integer overflow
-			b--;
 		}
-		else {
-			a = (a * 1ll * a) % mod;
-			b >>= 1; // b / 2;
-		}
+		a = (a * 1ll * a) % mod;
+		b >>= 1; // if b in odd(if 0th bit is set)
 	}
 	return ans;
 }
@@ -31,6 +28,7 @@ int main() {
 // https://prnt.sc/GRzQPneUZBpc
 // https://prnt.sc/X_IGW9oxTP0k
 // https://prnt.sc/Esqh6L4MTwNY
+// https://prnt.sc/EqH54bMpOFlT
 
 //In The Name of ALLAH
 #include<bits/stdc++.h>
@@ -43,26 +41,20 @@ ll binmul(ll a, ll b) {
 	while(b) {
 		if(b & 1) {
 			ans = (ans + a) % mod;
-			b--;
 		}
-		else {
-			a = (a + a) % mod;
-			b >>= 1;
-		}
+		a = (a + a) % mod;
+		b >>= 1;
 	}
 	return ans;
 }
 ll binexp(ll a, ll b) {
 	ll ans = 1;
 	while(b) {
-		if(b & 1) { // if b in odd
+		if(b & 1) { // if b in odd(if 0th bit is set)
 			ans = binmul(ans, a); 
-			b--;
 		}
-		else {
-			a = binmul(a, a);
-			b >>= 1; // b / 2;
-		}
+		a = binmul(a, a);
+		b >>= 1; // b / 2;
 	}
 	return ans;
 }
@@ -75,6 +67,7 @@ int main() {
 } 
 // O(log^2(N));
 // https://prnt.sc/BoD81LpIuEmq
+// https://prnt.sc/EqH54bMpOFlT
 
 //In The Name of ALLAH
 #include<bits/stdc++.h>
@@ -84,14 +77,11 @@ const int mod = 1e18 + 7;
 ll binexp(ll a, ll b) {
 	ll ans = 1;
 	while(b) {
-		if(b & 1) { // if b in odd
+		if(b & 1) { //if b in odd(if 0th bit is set)
 			ans = (ans * 1ll * a) % mod; // type cast for integer overflow
-			b--;
 		}
-		else {
-			a = (a * 1ll * a) % mod;
-			b >>= 1; // b / 2;
-		}
+		a = (a * 1ll * a) % mod;
+		b >>= 1; 
 	}
 	return ans;
 }
@@ -113,3 +103,8 @@ int main() {
   return 0; 
 } 
 // two numbers are large;
+
+// https://prnt.sc/GRzQPneUZBpc
+// https://prnt.sc/X_IGW9oxTP0k
+// https://prnt.sc/Esqh6L4MTwNY
+// https://prnt.sc/EqH54bMpOFlT

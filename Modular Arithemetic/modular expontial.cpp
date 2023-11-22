@@ -7,12 +7,9 @@ ll modexp(ll a, ll b, ll mod) {
 	while(b) {
 		if(b & 1) { // if b in odd
 			ans = (ans * 1ll * a) % mod; // type cast for integer overflow
-			b--;
 		}
-		else {
-			a = (a * 1ll * a) % mod;
-			b >>= 1; // b / 2;
-		}
+		a = (a * 1ll * a) % mod;
+		b >>= 1; // b / 2;
 	}
 	return ans;
 }
@@ -29,3 +26,4 @@ int main() {
 // https://prnt.sc/GRzQPneUZBpc
 // https://prnt.sc/X_IGW9oxTP0k
 // https://prnt.sc/Esqh6L4MTwNY
+// https://prnt.sc/EqH54bMpOFlT

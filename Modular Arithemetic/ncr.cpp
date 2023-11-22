@@ -9,12 +9,9 @@ int binexp(int a, int b) {
 	while(b) {
 		if(b & 1) { // if b in odd
 			ans = (ans * 1ll * a) % mod; // type cast for integer overflow
-			b--;
 		}
-		else {
-			a = (a * 1ll * a) % mod;
-			b >>= 1; // b / 2;
-		}
+		a = (a * 1ll * a) % mod;
+		b >>= 1; // b / 2;
 	}
 	return ans;
 }
@@ -30,7 +27,7 @@ int main() {
   	int n, r; cin >> n >> r;
   	int ans = fact[n]; // ncr = n! / ((n - r)! * r!);
   	ans = (ans * 1ll* fact[r]) % mod;
-  	int den = (fact[r - n] * 1ll * fact[n]) % mod;
+  	int den = (fact[n - r] * 1ll * fact[n]) % mod;
   	ans = (ans * 1ll * binexp(den, mod - 2)) % mod; //(a / b) = a * (b ^-1);
   	cout << ans << "\n";
   }
@@ -39,3 +36,11 @@ int main() {
 }
 // problem
 //https://www.hackerearth.com/practice/math/number-theory/basic-number-theory-1/practice-problems/algorithm/name-count/ 
+
+// https://prnt.sc/GRzQPneUZBpc
+// https://prnt.sc/X_IGW9oxTP0k
+// https://prnt.sc/Esqh6L4MTwNY
+// https://prnt.sc/EqH54bMpOFlT
+// https://prnt.sc/dwR4S5IBaeNL
+// https://prnt.sc/4lAPwqPlDzsU
+// https://prnt.sc/uee0Z_aK5Dc2 
