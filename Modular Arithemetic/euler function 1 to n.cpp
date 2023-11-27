@@ -11,7 +11,7 @@ int main() {
   cin.tie(0);
   for(int p = 1; p <= N; p++) phi[p] = p;
   for(int p = 2; p <= N; p++) { 
-    if(phi[p] == p) {
+    if(phi[p] == p) {//(phi[p] == p) that means p is prime
       for(int j = p; j < N; j += p) {
          phi[j] -= phi[j] / p;
       }
@@ -54,4 +54,6 @@ int main() {
   return 0;
 }
 
-
+// https://prnt.sc/lRUiaLUepq-q 
+// https://prnt.sc/Mxrbud_ZU2RM
+// https://prnt.sc/csXVbcf6USav

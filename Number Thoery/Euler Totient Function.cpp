@@ -105,5 +105,6 @@ int main() {
 }
 // // O(n * log(n))
 // https://prnt.sc/KRCCVmtCwyW8
-
- 
+// https://prnt.sc/lRUiaLUepq-q 
+// https://prnt.sc/Mxrbud_ZU2RM
+// https://prnt.sc/csXVbcf6USav

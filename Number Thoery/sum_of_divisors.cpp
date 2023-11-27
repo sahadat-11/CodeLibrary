@@ -22,9 +22,10 @@ int main() {
    }
    return 0;
 }
+//(sqrt(n))
+
 
 // approach 2:
-
 //In The Name of ALLAH
 #include <bits/stdc++.h>
 using namespace std;
@@ -37,13 +38,17 @@ int main() {
    for(int i = 1; i < N; i++) {
     for(int j  = i; j < N; j += i) sumdivs[j] += i; // divisor sum pre calculate;
    }
-  int t; cin >> t;
-  while(t--) {
-    int n; cin >> n;
-    cout << sumdivs[n] << "\n";
-  }
+   // divisor_sum 1 to N;(precalculate)
+
+   int t; cin >> t;
+   while(t--) {
+     int n; cin >> n;
+     cout << sumdivs[n] << "\n";
+   }
    return 0;
 }
+//(O(1))
+
 
 //In The Name of ALLAH
 #include <bits/stdc++.h>
@@ -62,6 +67,7 @@ int main() {
       }
     }
    }
+  //(n * log(n)) // precalculate
   int t; cin >> t;
   while(t--) {
     int n; cin >> n;
@@ -80,3 +86,7 @@ int main() {
   }
    return 0;
 }
+//(O(log(n)))
+// https://prnt.sc/o4S6knQOFi7B
+// https://prnt.sc/hzogSi6v6vNs
+// https://prnt.sc/uKjA1tY2G6g3

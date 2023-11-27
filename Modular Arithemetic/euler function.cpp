@@ -3,6 +3,25 @@
 using namespace std;
 #define ll long long
 int euler(int n) {
+	int ans = 0;
+	for(int i = 1; i <= n; i++) {
+		if(__gcd(i, n) == 1) ans++;
+	}
+	return ans;
+}
+int main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  int n; cin >> n;
+  cout << euler(n);
+  return 0;
+}
+
+//In The Name of ALLAH
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+int euler(int n) {
 	int ans = n;
 	for(int p = 2; p * p <= n; p++) {
 		if(n % p == 0) {
@@ -82,3 +101,5 @@ int main() {
 }
 // o(sqrt(n))
 // https://prnt.sc/lRUiaLUepq-q 
+// https://prnt.sc/Mxrbud_ZU2RM
+// https://prnt.sc/csXVbcf6USav
