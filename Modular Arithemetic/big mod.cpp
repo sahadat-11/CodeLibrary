@@ -70,6 +70,36 @@ int main() {
 // https://prnt.sc/EqH54bMpOFlT
 
 //In The Name of ALLAH
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+ll binmul(ll a, ll b, ll p) {
+   return __int128(a) * b % p;// convert to 128 bit;(10^36)
+}
+ll binexp(ll a, ll b, ll p) {
+   ll ans = 1;
+   while(b) {
+      if(b & 1) { // if b in odd(if 0th bit is set)
+         ans = binmul(ans, a, p); 
+      }
+      a = binmul(a, a, p);
+      b >>= 1; // b / 2;
+   }
+   return ans % p;
+}
+int main() {
+   ios_base::sync_with_stdio(0);
+   cin.tie(0);
+   ll a, b, p; cin >> a >> b >> p;
+   cout << binexp(a, b, p) << "\n";
+   cout << binmul(a, b, p) << "\n";
+   cout << binmul(a, binexp(b, p - 2, p), p);
+   return 0;
+}
+// https://prnt.sc/pX4okL80dQzU
+
+
+//In The Name of ALLAH
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
