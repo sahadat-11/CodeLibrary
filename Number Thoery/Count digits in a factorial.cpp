@@ -51,6 +51,9 @@ int main() {
    return 0;
 }
 
+// https://prnt.sc/_m3uNa1GPkwF
+// https://youtu.be/0-j-HIjoH8g?si=3PNIh8IATa2RZACB
+
 //In The Name of ALLAH
 #include <bits/stdc++.h>
 using namespace std;
