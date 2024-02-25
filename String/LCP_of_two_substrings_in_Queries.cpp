@@ -69,22 +69,27 @@ int main() {
   string a; cin >> a;
   build(a);
   int n = a.size();
-  int cnt = 0;
-   for (int len = 1; len <= n / 2; len++) {
-    bool ok = true;
-    for (int i = 0; i + len - 1 < n; i += len) {
-      ok &= substr_hash(i, i + len - 1) == substr_hash(0, len - 1);
+  int q; cin >> q;
+  while(q--) {
+    int i, j, x, y; cin >> i >> j >> x >> y;
+    int l = 1, r = min(j - i + 1, y - x + 1), ans = 0;
+    while (l <= r) {
+      int mid = l + r >> 1;
+      if (substr_hash(i, i + mid - 1) == substr_hash(x, x + mid - 1)) {
+        ans = mid;
+        l = mid + 1;
+      }
+      else {
+        r = mid - 1;
+      }
     }
-    cnt += ok;
+    cout << ans << "\n";
   }
-  cout << cnt + 1 << "\n"; //(+1 for himself)
   return 0;
 }
 
-// Given a string s of size n (1e5)
-//Find the number of divisors of s. A string b is a divisor of ss 
-//if it is possible to glue bb zero or more times to get the string s. 
-//For example, the divisors of abababab are ab, abab and abababab
+//Given a string s of size n and q queries of type i, j, x, y. 
+//Find the LCP of substrings s[i…j] and s[x…y];
 
 // https://prnt.sc/p6I4buEO35gV
 // https://prnt.sc/3UH2MThLhUb2

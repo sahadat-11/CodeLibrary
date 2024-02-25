@@ -78,3 +78,10 @@ int main() {
   return 0;
 }
 // https://cses.fi/problemset/task/1753/
+
+// https://prnt.sc/p6I4buEO35gV
+// https://prnt.sc/3UH2MThLhUb2
+// https://prnt.sc/6RisYwjQFrql
+// https://prnt.sc/FoN9UxCvpRO4
+// https://prnt.sc/uyrG-q6xbvLi
+// https://prnt.sc/dlwkheUH5Uh4

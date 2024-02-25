@@ -38,3 +38,10 @@ int main() {
 }
 // You are given n (5e3) strings each of size m (5e3). 
 // Find the number of unique strings in 1s.
+
+// https://prnt.sc/p6I4buEO35gV
+// https://prnt.sc/3UH2MThLhUb2
+// https://prnt.sc/6RisYwjQFrql
+// https://prnt.sc/FoN9UxCvpRO4
+// https://prnt.sc/uyrG-q6xbvLi
+// https://prnt.sc/dlwkheUH5Uh4

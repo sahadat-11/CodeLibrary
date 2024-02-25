@@ -66,29 +66,15 @@ int main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   prec();
-  string a; cin >> a;
-  build(a);
-  int n = a.size();
-  int cnt = 0;
-   for (int len = 1; len <= n / 2; len++) {
-    bool ok = true;
-    for (int i = 0; i + len - 1 < n; i += len) {
-      ok &= substr_hash(i, i + len - 1) == substr_hash(0, len - 1);
-    }
-    cnt += ok;
+  string a, b; cin >> a >> b;
+  build(a); build(b);
+  int n = a.size(), m = b.size();
+  int l = 0, r = min(n, m) - 1;
+  while(l <= r) {
+    int mid = l + (r - l) / 2;
+    if(substr_hash(l, l + mid - 1) == substr_hash())
   }
-  cout << cnt + 1 << "\n"; //(+1 for himself)
   return 0;
 }
 
-// Given a string s of size n (1e5)
-//Find the number of divisors of s. A string b is a divisor of ss 
-//if it is possible to glue bb zero or more times to get the string s. 
-//For example, the divisors of abababab are ab, abab and abababab
 
-// https://prnt.sc/p6I4buEO35gV
-// https://prnt.sc/3UH2MThLhUb2
-// https://prnt.sc/6RisYwjQFrql
-// https://prnt.sc/FoN9UxCvpRO4
-// https://prnt.sc/uyrG-q6xbvLi
-// https://prnt.sc/dlwkheUH5Uh4

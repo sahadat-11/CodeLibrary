@@ -3,6 +3,7 @@
 using namespace std;
 const int N = 1e6 + 9;
 const int p1 = 137, mod1 = 127657753, p2 = 277, mod2 = 987654319;
+int n;
 int binexp(long long a, long long b, int mod) {
   int ans = 1 % mod; a %= mod; if (a < 0) a += mod;
   while (b) {
@@ -61,30 +62,40 @@ pair<int, int> substr_hash(int i, int j) {
   if (i) hs.second = (hs.second - pref[i - 1].second + mod2) % mod2;
   hs.second = 1LL * hs.second * ipw[i].second % mod2;
   return hs;
-} 
+}
+int max_occ(int len) {
+  map<pair<int,int>, int> mp;// because hash is pair
+  for(int i = 0; i + len - 1 < n; i++) {
+    mp[substr_hash(i, i + len - 1)]++;
+  }
+  int ans = 0;
+  for(auto [x, y] : mp) {
+    ans = max(ans, y);
+  }
+  return ans;
+}
 int main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   prec();
   string a; cin >> a;
   build(a);
-  int n = a.size();
-  int cnt = 0;
-   for (int len = 1; len <= n / 2; len++) {
-    bool ok = true;
-    for (int i = 0; i + len - 1 < n; i += len) {
-      ok &= substr_hash(i, i + len - 1) == substr_hash(0, len - 1);
+  n = a.size();
+  int k; cin >> k;
+  int l = 1, r = n, ans = -1;
+  while(l <= r) {
+    int mid = l + (r - l) / 2;
+    if(max_occ(mid) >= k) {
+      ans = mid;
+      l = mid + 1;
     }
-    cnt += ok;
+    else {
+      r = mid - 1;
+    }
   }
-  cout << cnt + 1 << "\n"; //(+1 for himself)
+  cout << ans << "\n";
   return 0;
 }
-
-// Given a string s of size n (1e5)
-//Find the number of divisors of s. A string b is a divisor of ss 
-//if it is possible to glue bb zero or more times to get the string s. 
-//For example, the divisors of abababab are ab, abab and abababab
 
 // https://prnt.sc/p6I4buEO35gV
 // https://prnt.sc/3UH2MThLhUb2
