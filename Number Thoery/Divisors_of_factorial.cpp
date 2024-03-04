@@ -41,7 +41,7 @@ int main() {
  }
     return 0;
 }
-
+// O(prime size() * n);
 
 // approach 2: 
 //In The Name of ALLAH
@@ -80,3 +80,48 @@ int main() {
  }
     return 0;
 }
+
+// (n * log(n)); better
+
+// approach 2: 
+//In The Name of ALLAH
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+const int N = 5e4 + 8, mod = 1e9 + 7;
+int spf[N];
+int main() {
+   ios_base::sync_with_stdio(0);
+   cin.tie(0);
+   for(int i = 1; i <= N; i++) spf[i] = i;
+   for(int i = 2; i <= N; i++) {
+      if(spf[i] == i) {
+      for(int j = i; j <= N; j += i) spf[j] = min(spf[j], i);
+     }
+   }
+   int t; cin >> t;
+   while(t--) {
+   int n; cin >> n;
+   vector<int> cnt(n + 1, 0);
+   int count_of_divisor = 1;
+   for(int i = 1; i <= n; i++) {
+      int x = i;
+      while(x > 1) {
+         int k = spf[x];
+         while(x % k == 0) {
+            cnt[k]++;
+            x /= k;
+         }
+      }
+   }
+   for(auto e : cnt) {
+      count_of_divisor = 1ll * count_of_divisor * (e + 1) % mod;
+   }
+   cout << count_of_divisor << "\n";
+   
+ }
+    return 0;
+}
+
+// (n * log(n)); better
+
