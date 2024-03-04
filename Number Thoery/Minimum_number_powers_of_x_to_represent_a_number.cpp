@@ -19,7 +19,7 @@ void solve() {
    int cnt = 0;
    for(int i = 10; i >= 0; i--) {
    	int mask = (binexp(x, i));
-   	if(mask <= n and n) {
+   	if(mask <= n) {
    		cnt++;
    		n -= mask;
    		cout << n << " " << mask << "\n";

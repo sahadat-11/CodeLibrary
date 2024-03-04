@@ -11,7 +11,7 @@ void solve() {
      if(mask <= n) {
      	n -= mask;
      	cnt++;
-     	cout << mask << "\n";
+     	cout << i << " " << mask << "\n";
      }
    }
    cout << cnt << "\n";
