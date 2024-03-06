@@ -1,3 +1,4 @@
+// n <= 1e6;
 //In The Name of ALLAH
 #include <bits/stdc++.h>
 using namespace std;
