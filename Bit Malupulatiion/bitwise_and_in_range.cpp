@@ -62,4 +62,6 @@ int main() {
 }
 // O(30);
 
-// https://prnt.sc/OESh9_EVE-Hy
+// https://prnt.sc/omPnOQfMOrbX
+
+// https://www.youtube.com/watch?v=E0IvvnIMvFk
