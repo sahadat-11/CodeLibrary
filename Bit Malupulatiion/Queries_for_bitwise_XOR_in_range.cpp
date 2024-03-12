@@ -27,7 +27,7 @@ void solve() {
    	int ans = 0;
    	for(int bit = 0; bit < 32; bit++) {
    	  int x = pre[bit][r] - pre[bit][l - 1];
-   	  if(x == r - l + 1) {
+   	  if(x % 2 != 0) {
         ans |= (1 << bit);
    	  }
    	}
@@ -44,7 +44,6 @@ int32_t main() {
   }
   return 0;
 }
-
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -76,7 +75,7 @@ vector<vector<int> > prefixsumBit(vector<int>& nums)
   return psum;
 }
 
-int rangeBitwiseAND(vector<vector<int> >& psum, int l,
+int rangeBitwiseXOR(vector<vector<int> >& psum, int l,
           int r)
 {
   int result = 0;
@@ -84,9 +83,9 @@ int rangeBitwiseAND(vector<vector<int> >& psum, int l,
     // Calculate the count of elements with j-th bit set
     // in the range [l, r]
     int count = psum[r][j] - psum[l - 1][j];
-    if (count == r - l + 1) {
-      // If all elements in the range have j-th bit
-      // set, add it to the result
+
+    // If count is odd, add it to the result
+    if (count % 2 == 1) {
       result = result + (1 << j);
     }
   }
@@ -105,7 +104,7 @@ int main()
 // 2D prefix sum
   vector<vector<int> > psum = prefixsumBit(nums);
 
-  cout << "Bitwise AND of range [2,4] is :"<<rangeBitwiseAND(psum, l, r);
+  cout <<"Bitwise XOR of range [2,4] is :"<< rangeBitwiseXOR(psum, l, r);
 
   return 0;
 }
