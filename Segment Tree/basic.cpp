@@ -1,54 +1,114 @@
 //In The Name of ALLAH
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+#define int long long
 const int N = 1e5 + 7;
 int a[N];
 int t[4 * N];
-void build(int node, int b, int e) {
+int merge(int l, int r) { // change this
+  return l + r;
+}
+void build(int n, int b, int e) {
 	if(b == e) {
-		t[node] = a[b];
+		t[n] = a[b];
 		return;
 	}
-	int l = 2 * node, r = 2 * node + 1;
+	int l = 2 * n, r = 2 * n + 1;
 	int mid = (b + e) / 2;
 	build(l, b, mid);
 	build(r, mid + 1, e);
-	t[node] = t[l] + t[r];
+	t[n] = merge(t[l], t[r]);
 }
-int query(int node, int b, int e, int i, int j) { //(i, j) = range
+int query(int n, int b, int e, int i, int j) { //(i, j) = range
 	if(b > j or e < i) return 0; // totally out
 	if(b >= i and e <= j) {// totally in
-		return t[node];
+		return t[n];
 	}
-	int l = 2 * node, r = 2 * node + 1;
+	int l = 2 * n, r = 2 * n + 1;
 	int mid = (b + e) / 2;
-	return query(l, b, mid, i, j) + query(r, mid + 1, e, i, j);
+	return merge(query(l, b, mid, i, j), query(r, mid + 1, e, i, j));
 }
-void update(int node, int b, int e, int i, int x) {
+void update(int n, int b, int e, int i, int x) {
 	if(b > i or e < i) return;
 	if(b >= i and e <= i) {
-		t[node] = x;
+		t[n] = x;
 		return;
 	}
-	int l = 2 * node, r = 2 * node + 1;
+	int l = 2 * n, r = 2 * n + 1;
 	int mid = (b + e) / 2;
 	update(l, b, mid, i, x);
 	update(r, mid + 1, e, i, x);
-	t[node] = t[l] + t[r];
+	t[n] = merge(t[l], t[r]);
 }
-int main() {
-	ios_base::sync_with_stdio(0);
+int32_t main() {
+	  ios_base::sync_with_stdio(0);
     cin.tie(0);
     int n; cin >> n;
     for(int i = 1; i <= n; i++) cin >> a[i];
     // 1 2 3 4 5
     build(1, 1, n);
-    cout << t[1] << endl;
+    cout << t[1] << endl; // (1 to 5) index sum
     cout << query(1, 1, n, 2, 4) << endl;
     update(1, 1, n, 3, 10);
     //1 2 10 4 5
     cout << query(1, 1, n, 2, 4) << endl;
     return 0;
 }
-// http://www.shafaetsplanet.com/?p=1557
+
+// // http://www.shafaetsplanet.com/?p=1557
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// const int N = 3e5 + 9;
+
+// int a[N];
+// struct ST {
+//   int t[4 * N];
+//   static const int inf = 1e9;
+//   ST() {
+//     memset(t, 0, sizeof t);
+//   }
+//   void build(int n, int b, int e) {
+//     if (b == e) {
+//       t[n] = a[b];
+//       return;
+//     }
+//     int mid = (b + e) >> 1, l = n << 1, r = l | 1;
+//     build(l, b, mid);
+//     build(r, mid + 1, e);
+//     t[n] = max(t[l], t[r]); // change this
+//   }
+//   void upd(int n, int b, int e, int i, int x) {
+//     if (b > i || e < i) return;
+//     if (b == e && b == i) {
+//       t[n] = x; // update
+//       return;
+//     }
+//     int mid = (b + e) >> 1, l = n << 1, r = l | 1;
+//     upd(l, b, mid, i, x);
+//     upd(r, mid + 1, e, i, x);
+//     t[n] = max(t[l], t[r]); // change this
+//   }
+//   int query(int n, int b, int e, int i, int j) {
+//     if (b > j || e < i) return -inf; // return appropriate value
+//     if (b >= i && e <= j) return t[n];
+//     int mid = (b + e) >> 1, l = n << 1, r = l | 1;
+//     return max(query(l, b, mid, i, j), query(r, mid + 1, e, i, j)); // change this
+//   }
+// }t;
+
+// int32_t main() {
+//   ios_base::sync_with_stdio(0);
+//   cin.tie(0);
+//   int n = 5;
+//   for (int i = 1; i <= n; i++) {
+//     a[i] = i;
+//   }
+//   t.build(1, 1, n); // building the segment tree
+//   t.upd(1, 1, n, 2, 10); // assiging 10 to the index 2 (a[2] := 10)
+//   cout << t.query(1, 1, n, 1, 5) << '\n'; // range max query on the segment [1, 5]
+
+//   return 0;
+// }

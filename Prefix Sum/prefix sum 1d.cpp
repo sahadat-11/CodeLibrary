@@ -1,6 +1,7 @@
 //In The Name of ALLAH
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 const int N = 1e5 + 7;
 int pre[N];
 int main() {
@@ -21,6 +22,7 @@ int main() {
 #include<bits/stdc++.h>
 using namespace std;
 const int N = 1e5 + 7;
+#define int long long
 int pre[N];
 int main() {
   ios_base::sync_with_stdio(0);
