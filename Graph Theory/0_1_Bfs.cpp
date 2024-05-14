@@ -17,22 +17,22 @@ int32_t main() {
   	g[u].push_back({v, 0});
   	g[v].push_back({u, 1});
   }
-  deque<int> de;
-  de.push_back(1);
+  deque<int> q;
+  q.push_back(1);
   lev[1] = 0;
-  while(!de.empty()) {
-    int cur_v = de.front();
-    de.pop_front();
+  while(!q.empty()) {
+    int cur_v = q.front();
+    q.pop_front();
     for(auto child : g[cur_v]) {
        int child_v = child.first;
        int child_wt = child.second;
        if(lev[cur_v] + child_wt < lev[child_v]) {
          lev[child_v] = lev[cur_v] + child_wt;
          if(child_wt == 1) {
-           de.push_back(child_v);
+           q.push_back(child_v);
          } 
          else {
-          de.push_front(child_v);
+          q.push_front(child_v);
          }
        }
     }
