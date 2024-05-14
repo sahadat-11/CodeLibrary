@@ -44,7 +44,7 @@ int32_t main() {
   // cout << "\n";
   int x = min((int)ans1.size(), (int)ans2.size());
   int ans = -1;
-  for(int i = 1; i <= x; i++) {
+  for(int i = 0; i < x; i++) {
     if(ans1[i] == ans2[i]) {
       ans = ans1[i];
     }

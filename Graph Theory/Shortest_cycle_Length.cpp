@@ -21,18 +21,18 @@ int32_t main() {
   int ans = inf;
   for(int i = 1; i <= n; i++) {
     vector<int> dis(n + 1, inf);
-    queue<int> qe;
-    qe.push(i); // source
+    queue<int> q;
+    q.push(i); // source
     dis[i] = 0;
     vector<int> par(n + 1, -1);
-    while(!qe.empty()) {
-      int u = qe.front();
-      qe.pop();
+    while(!q.empty()) {
+      int u = q.front();
+      q.pop();
       for(auto v : g[u]) {
         if(dis[v] == inf) { // not visited
           dis[v] = dis[u] + 1;
           par[v] = u;
-          qe.push(v);
+          q.push(v);
         }
         else if(par[u] != v and par[v] != u){
           ans = min(ans, dis[v] + dis[u] + 1);
