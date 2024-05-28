@@ -57,3 +57,6 @@ int main() {
    cout << (n & (n - 1));
    return 0;
 }
+
+//https://prnt.sc/XBKTEkXAxOsu
+//https://prnt.sc/Ll4_-0BVX3jq

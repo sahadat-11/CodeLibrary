@@ -18,7 +18,6 @@ int main() {
 
 
 //Smallest prime factor from 1 to N
-
 //In The Name of ALLAH
 #include <bits/stdc++.h>
 using namespace std;
@@ -40,3 +39,4 @@ int main() {
    
    return 0;
 }
+//(n * log(n))

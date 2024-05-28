@@ -21,3 +21,4 @@ int main() {
 }
 // O (1);
 // https://prnt.sc/7qcu2lsmJjYU 
+//https://prnt.sc/FIV1AJZEGc8i

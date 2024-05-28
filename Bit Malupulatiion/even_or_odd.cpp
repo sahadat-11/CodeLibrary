@@ -23,3 +23,4 @@ int main() {
    else cout << "EVEN";
    return 0;
 }
+//https://prnt.sc/js0zN6qX0e3x

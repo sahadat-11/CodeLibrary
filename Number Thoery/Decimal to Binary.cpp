@@ -16,3 +16,4 @@ int main() {
    return 0;
 }
 //Complexity O(log n)
+//https://prnt.sc/oT2xQkR-mUmF
