@@ -1,10 +1,10 @@
 //In The Name of AllAH
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+#define int long long
 const int N = 5e4 + 7;
 int a[N], b[N], ans[N];
-int main() {
+int32_t main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     int t; cin >> t;
@@ -30,10 +30,10 @@ int main() {
 //In The Name of AllAH
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+#define int long long
 const int N = 5e4 + 7;
 int a[N], b[N], Q[N], ans[3 * N];
-int main() {
+int32_t main() {
 	ios_base::sync_with_stdio(0);
     cin.tie(0);
     int t, cs = 0; cin >> t;

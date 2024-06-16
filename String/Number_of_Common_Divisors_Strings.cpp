@@ -4,7 +4,6 @@ using namespace std;
 const int N = 1e6 + 9;
 const int p1 = 137, mod1 = 127657753, p2 = 277, mod2 = 987654319;
 #define int long long
-int n;
 
 int binexp(int a, int b, int mod) {
   int ans = 1 % mod; a %= mod; if (a < 0) a += mod;
@@ -18,7 +17,7 @@ int binexp(int a, int b, int mod) {
  
 int ip1, ip2;
 pair<int, int> pw[N], ipw[N];
- 
+
 pair<int, int> string_hash(string s) {
   int n = s.size();
   pair<int, int> hs({0, 0});
@@ -30,11 +29,11 @@ pair<int, int> string_hash(string s) {
   }
   return hs;
 }
-pair<int, int> pref[N];
 
+pair<int, int> pref[N];
 void prefix_sum(string s) {
-  int n = s.size();
-  for (int i = 0; i < n; i++) {
+  int sz = s.size();
+  for (int i = 0; i < sz; i++) {
     pref[i].first = s[i] * pw[i].first % mod1;
     if (i) pref[i].first = (pref[i].first + pref[i - 1].first) % mod1;
     pref[i].second = s[i] * pw[i].second % mod2;
@@ -53,19 +52,7 @@ pair<int, int> substr_hash(int i, int j) {
   hs.second = hs.second * ipw[i].second % mod2;
   return hs;
 }
-
-int max_occ(int len) {
-  map<pair<int, int>, int> mp;// because hash is pair
-  for(int i = 0; i + len - 1 < n; i++) {
-    mp[substr_hash(i, i + len - 1)]++;
-  }
-  int ans = 0;
-  for(auto [x, y] : mp) {
-    ans = max(ans, y);
-  }
-  return ans;
-}
-
+ 
 int32_t main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
@@ -75,38 +62,32 @@ int32_t main() {
     pw[i].first = pw[i - 1].first * p1 % mod1;
     pw[i].second = pw[i - 1].second * p2 % mod2;
   }
+  
   // inverse of p calculate
   ip1 = binexp(p1, mod1 - 2, mod1);
   ip2 = binexp(p2, mod2 - 2, mod2);
+
   ipw[0] =  {1, 1};
   for (int i = 1; i < N; i++) {
     ipw[i].first = ipw[i - 1].first * ip1 % mod1;
     ipw[i].second = ipw[i - 1].second * ip2 % mod2;
   }
 
-  string a; cin >> a;
-  prefix_sum(a);
-  n = a.size();
-  int k; cin >> k;
-  int l = 1, r = n, ans = -1;
-  while(l <= r) {
-    int mid = l + (r - l) / 2;
-    if(max_occ(mid) >= k) {
-      ans = mid;
-      l = mid + 1;
+  string a, b; cin >> a >> b;
+  prefix_sum(a), prefix_sum(b);
+  int n = a.size(), m = b.size(), cnt = 0;
+  int x = min(n, m);
+  for (int len = 1; len <= x; len++) {
+    bool ok1 = true, ok2 = true;
+    for (int i = 0; i + len - 1 < n; i += len) {
+      ok1 &= substr_hash(i, i + len - 1) == substr_hash(0, len - 1);
     }
-    else {
-      r = mid - 1;
+    for (int i = 0; i + len - 1 < m; i += len) {
+      ok2 &= substr_hash(i, i + len - 1) == substr_hash(0, len - 1);
     }
+    cnt += (ok1 and ok2);
   }
-  cout << ans << "\n";
+  cout << cnt << "\n";
+
   return 0;
 }
-// O(N * log(N * N))
-
-// https://prnt.sc/p6I4buEO35gV
-// https://prnt.sc/3UH2MThLhUb2
-// https://prnt.sc/6RisYwjQFrql
-// https://prnt.sc/FoN9UxCvpRO4
-// https://prnt.sc/uyrG-q6xbvLi
-// https://prnt.sc/dlwkheUH5Uh4

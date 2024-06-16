@@ -21,7 +21,7 @@ int hsh(string s) {
 int main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
-	string a, b; cin >> a >> b;
+  string a, b; cin >> a >> b;
   pre();
   cout << hsh(a) << " " << hsh(b) << endl;
   if(hsh(a) == hsh(b)) cout << "Equal";
