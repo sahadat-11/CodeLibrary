@@ -22,6 +22,7 @@ int32_t main() {
   return 0;
 }
 // if All element are Zero
+// if All are zero we can solve it with only difference array
 
 
 

@@ -20,7 +20,7 @@ int main() {
    vector<int> prime;
    for(int i = 2; i <= N; i++) {
     if(!f[i]) prime.push_back(i);
-  }
+   }
    int t; cin >> t;
    while(t--) {
    int n; cin >> n;

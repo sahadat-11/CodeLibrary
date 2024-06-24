@@ -8,29 +8,21 @@ int main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   // o_set<int> se;
-  // se.insert(4);
-  // se.insert(2);
-  // se.insert(5);
-  // se.insert(4);
-  // se.insert(5);
-  // se.insert(7);
-  // se.insert(6);
-  // for(auto u : se) cout << u << " "; cout << "\n"; // 2 4 5 6 7
-  // se.erase(4);
   // for(auto u : se) cout << u << " "; cout << "\n";// 2 5 6 7
   // cout << se.order_of_key(5) << '\n'; // number of elements < 5
   // cout << se.order_of_key(6) << '\n'; // number of elements < 6
   // auto it = se.find_by_order(1);// if you imagine this as a 0-indexed vector, what is se[1]?
   // cout << *it << "\n";
-    int n; cin >> n; int a[n];
-    for(int i = 0; i < n; i++) cin >> a[i];
-    o_set<pair<int, int>> st;
-    for(int i = n - 1; i >= 0; i--) {
-      st.insert({a[i], i});
-    }
-    for(auto u : st) {
-      cout << u.first << " " << u.second << endl;
-    }
+  int n; cin >> n; int a[n];
+  for(int i = 0; i < n; i++) cin >> a[i];
+  o_set<pair<int, int>> st;
+  for(int i = n - 1; i >= 0; i--) {
+    st.insert({a[i], i});
+  }
+  for(auto u : st) {
+    cout << u.first << " " << u.second << endl;
+  }
+  cout << st.order_of_key({5, 0}) - st.order_of_key({3, 0}) << "\n";
   return 0;
 }
 // (O(log n));
@@ -56,8 +48,7 @@ using namespace __gnu_pbds;
 #define ordered_set tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update> 
 
 // Driver program to test above functions 
-int main() 
-{ 
+int main() { 
   // Ordered set declared with name o_set 
   ordered_set o_set; 
 

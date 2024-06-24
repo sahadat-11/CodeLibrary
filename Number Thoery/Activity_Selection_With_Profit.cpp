@@ -94,3 +94,5 @@ int32_t main() {
   return 0;
 }
 // O(N * log(N)
+
+// https://cses.fi/problemset/task/1140/
