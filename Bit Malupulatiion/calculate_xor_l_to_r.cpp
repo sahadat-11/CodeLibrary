@@ -12,13 +12,8 @@ int claculate(int n) {
 int main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
-   int l, r; cin >> l >> r;
-   int x = claculate(l - 1);
-   int y = claculate(r);
-   int ans = x ^ y;
-   cout << ans << endl;
+   cout << "Sa";
    return 0;
 }
 // O (1);
 // https://prnt.sc/7qcu2lsmJjYU 
-//https://prnt.sc/FIV1AJZEGc8i

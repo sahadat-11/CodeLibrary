@@ -2,22 +2,24 @@
 // #include<bits/stdc++.h>
 // using namespace std;
 // const int mod = 1e9 + 7;
-// #define ll long long
+// #define int long long
 // void solve() {
 //    int n; cin >> n;
-//    vector<int> v(n);
-//    for(int i = 0; i < n; i++) cin >> v[i]; 
+//    vector<int> a(n);
+//    for(int i = 0; i < n; i++) {
+//      cin >> a[i]; 
+//    }
 //    int cnt = 0;
 //    for(int i = 0; i < n - 1; i++) {
 //    	 for(int j = i + 1; j < n; j++) {
-//        ll x = v[i] * v[j];
-//        ll y = sqrtl(x);
+//        int x = a[i] * a[j];
+//        int y = sqrtl(x);
 //        if(y * y == x) cnt++;
 //    	 }
 //    }
 //    cout << cnt << "\n";
 // }
-// int main() {
+// int32_t main() {
 //   ios_base::sync_with_stdio(0);
 //   cin.tie(0);
 //   int t = 1; 
@@ -35,8 +37,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
 int spf[N];
-#define ll long long
+
 void solve() {
    for(int i = 1; i < N; i++) spf[i] = i;
    for(int i = 2; i < N; i++) {
@@ -47,10 +50,12 @@ void solve() {
     }
    }
    int n; cin >> n;
-   vector<int> v(n);
-   for(int i = 0; i < n; i++) cin >> v[i]; 
+   vector<int> a(n);
    for(int i = 0; i < n; i++) {
-   	 int x = v[i];
+     cin >> a[i];
+   } 
+   for(int i = 0; i < n; i++) {
+   	 int x = a[i];
    	 int num = 1;
    	 while(x > 1) {
    	 	int cnt = 0;
@@ -61,17 +66,18 @@ void solve() {
    	 	}
    	 	if(cnt % 2) num *= y;
    	 }
-   	 v[i] = num;
+   	 a[i] = num;
    }
    map<int, int> mp;
-   ll cnt = 0;
-   for(auto u : v) mp[u]++;
-   for(auto u : mp) {
-   	 cnt += (u.second) * (u.second - 1) / 2;
+   int ans = 0;
+   for(auto u : a) mp[u]++;
+   for(auto [val, cnt] : mp) {
+   	ans += (cnt * (cnt - 1) / 2);
+     //cout << val << " " << cnt << "\n";
    }
-   cout << cnt << "\n";
+   cout << ans << "\n";
 }
-int main() {
+int32_t main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   int t = 1; 
@@ -82,4 +88,6 @@ int main() {
   return 0;
 }
 
-// O(n * n);
+// O(n * log(n);
+// https://prnt.sc/W-xXu8j6-MuW
+// https://prnt.sc/AgIhNheGgEZF

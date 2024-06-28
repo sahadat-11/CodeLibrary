@@ -7,20 +7,22 @@ const int N = 1e7 + 7;
 map<int, bool> perfect_square;
 void solve() {
    int n; cin >> n;
-   vector<int> v(n);
-   for(int i = 0; i < n; i++) cin >> v[i];
-   sort(v.begin(), v.end());
-   int mx = v[n - 1] + v[n - 2];
+   vector<int> a(n);
+   for(int i = 0; i < n; i++) {
+     cin >> a[i];
+   }
+   sort(a.begin(), a.end());
+   int mx = a[n - 1] + a[n - 2];
    int cnt = 0;
    map<int, bool> mp;
    for(int i = 0; i < n; i++) {
-    mp[v[i]] = true; 
+    mp[a[i]] = true; 
    }
    for(int i = 0; i < n; i++) {
      for(int j = 1; j * j <= mx; j++) {
         int x = j * j;
-        if(mp[x - v[i]]) {
-          cout << x << " " << v[i] << endl;
+        if(mp[x - a[i]]) {
+          cout << x << " " << a[i] << endl;
           cnt++;
         }
      }
