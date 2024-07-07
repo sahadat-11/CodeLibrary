@@ -1,0 +1,1 @@
+{"name":"Local: Kth_Right_Rotation_or_Shift","url":"e:\\CodeLibrary\\Number Thoery\\Kth_Right_Rotation_or_Shift.coo.cpp","tests":[{"id":1720240531775,"input":"5 2\n3 6 8 9 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CodeLibrary\\Number Thoery\\Kth_Right_Rotation_or_Shift.coo.cpp","group":"local","local":true}

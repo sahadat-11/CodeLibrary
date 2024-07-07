@@ -1,0 +1,1 @@
+{"name":"Local: Count all sub-arrays sum divisible by k","url":"e:\\CodeLibrary\\Subarray\\Count all sub-arrays sum divisible by k.cpp","tests":[{"id":1720273633591,"input":"5\n3 1 2 7 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CodeLibrary\\Subarray\\Count all sub-arrays sum divisible by k.cpp","group":"local","local":true}
