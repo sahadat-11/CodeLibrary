@@ -48,8 +48,8 @@ int32_t main() {
   }
   for(int i = 1; i <= n; i++) {
   	dif[i] += dif[i - 1];
-    a[i] += dif[i];
-    cout << a[i] << " ";
+        a[i] += dif[i];
+        cout << a[i] << " ";
   }
   return 0;
 }
@@ -95,8 +95,8 @@ int32_t main() {
 
   for(int i = 1; i <= n; i++) {
   	dif[i] += dif[i - 1];
-    a[i] += dif[i];
-    cout << a[i] << " ";
+        a[i] += dif[i];
+        cout << a[i] << " ";
   }
   return 0;
 }

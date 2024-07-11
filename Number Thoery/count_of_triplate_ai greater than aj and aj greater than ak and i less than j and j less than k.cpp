@@ -1,3 +1,6 @@
+
+// a[i] > a[j] > a[k], i < j < k;
+
 #include<bits/stdc++.h>
 #include<ext/pb_ds/assoc_container.hpp>
 #include<ext/pb_ds/tree_policy.hpp>
@@ -38,6 +41,7 @@ int main() {
   return 0;
 }
 
+// In The Name Of ALLAH
 #include<bits/stdc++.h>
 #include<ext/pb_ds/assoc_container.hpp>
 #include<ext/pb_ds/tree_policy.hpp>
@@ -71,4 +75,4 @@ int main() {
   return 0;
 }
 
-//https://prnt.sc/UvbxHuK4wZz4
+// https://prnt.sc/UvbxHuK4wZz4
