@@ -1,14 +1,14 @@
 //In The Name of ALLAH
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+#define int long long
 const int mod = 1e9 + 7;
-int main() {
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    int t; cin >> t;
    while(t--) {
-      ll l, r; cin >> l >> r;
+      int l, r; cin >> l >> r;
       int setbit = __builtin_popcountll(r);
       if(l == r) { 
          cout << l << "\n";

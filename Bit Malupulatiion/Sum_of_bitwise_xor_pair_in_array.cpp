@@ -3,8 +3,8 @@
 //In The Name of ALLAH
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
-int main() {
+#define int long long
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    int n; cin >> n; int a[n];
@@ -21,8 +21,8 @@ int main() {
 //In The Name of ALLAH
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
-int main() {
+#define int long long
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    int n; cin >> n; int a[n];
@@ -42,13 +42,13 @@ int main() {
 //In The Name of ALLAH
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
-int main() {
+#define int long long
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    int n; cin >> n; int a[n];
    for(int i = 0; i < n; i++) cin >> a[i];
-   ll sum = 0;
+   int sum = 0;
    for(int bit = 0; bit < 32; bit++) {
       int one = 0, zero = 0;
       for(int i = 0; i < n; i++) {

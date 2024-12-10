@@ -1,10 +1,9 @@
 // approach 1:(important)
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-#define mod 1000000007
-const int N = 1e6 + 7;
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
 bitset<N>f;
 vector<int> prime;
 void sieve () {
@@ -19,7 +18,7 @@ void sieve () {
       if(!f[i]) prime.push_back(i);
     }
 }
-int main() {
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    sieve ();
@@ -46,30 +45,29 @@ int main() {
 // approach 2:
 
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-#define mod 1000000007
-const int N = 1e6 + 7;
-ll spf[N];
-int main() {
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
+int spf[N];
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
-   for(ll i = 2; i < N; i++) spf[i] = i;
-   for(ll i = 2; i < N; i++) {
+   for(int i = 2; i < N; i++) spf[i] = i;
+   for(int i = 2; i < N; i++) {
       if(spf[i] == i) {
-         for(ll j = i; j < N; j += i) spf[j] = min(spf[j], i);
+         for(int j = i; j < N; j += i) spf[j] = min(spf[j], i);
       }
    }
-   ll t; cin >> t;
+   int t; cin >> t;
    while(t--) {
-      ll n; cin >> n;
-      vector<ll> cnt(n + 1, 0);
-      ll number_of_divisor = 1;
-      for(ll i = 1; i <= n; i++) {
-         ll x = i;
+      int n; cin >> n;
+      vector<int> cnt(n + 1, 0);
+      int number_of_divisor = 1;
+      for(int i = 1; i <= n; i++) {
+         int x = i;
          while(x > 1) {
-            ll k = spf[x];
+            int k = spf[x];
             cnt[k]++;
             x /= k;
          }
@@ -87,11 +85,10 @@ int main() {
 
 // approach 3:(important)
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-#define mod 1000000007
-const int N = 1e6 + 7;
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
 bitset<N>f;
 vector<int> prime;
 void sieve () {
@@ -106,12 +103,12 @@ void sieve () {
       if(!f[i]) prime.push_back(i);
     }
 }
-int main() {
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    sieve ();
-    int t; cin >> t;
-    while(t--) {
+   int t; cin >> t;
+   while(t--) {
       int n; cin >> n;
       int number_of_divisor = 1;
       for(auto p : prime) {
@@ -125,6 +122,6 @@ int main() {
          number_of_divisor = (1LL * number_of_divisor * (exp + 1)) % mod;
       }
       cout << number_of_divisor << "\n";
-    }
-    return 0;
+   }
+   return 0;
 }

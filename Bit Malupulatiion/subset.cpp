@@ -1,7 +1,7 @@
 //In The Name of ALLAH
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+#define int long long
 vector<vector<int>> subsets(vector<int>& nums) {
 int n = nums.size();
 int sub_cnt = (1 << n); // (2^n);
@@ -21,11 +21,11 @@ int main() {
 ios_base::sync_with_stdio(0);
 cin.tie(0);
 int n; cin >> n;
-vector<int> v(n);
+vector<int> a(n);
 for(int i = 0; i < n; i++) {
-	cin >> v[i];
+	cin >> a[i];
 }
-auto all_subsets = subsets(v);
+auto all_subsets = subsets(a);
 for(auto subset : all_subsets) {
 	 for(int ele : subset) {
 	 	cout << ele << " ";
@@ -34,6 +34,6 @@ for(auto subset : all_subsets) {
   }
   return 0;
 }
-//https://prnt.sc/VXizd3fD0nfm 
-//https://www.youtube.com/watch?v=wpWGDHmpbgA
+// https://prnt.sc/VXizd3fD0nfm 
+// https://www.youtube.com/watch?a=wpWGDHmpbgA
 

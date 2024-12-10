@@ -1,8 +1,9 @@
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-int main() {
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    string binary; cin >> binary;//left to right;
@@ -20,10 +21,11 @@ int main() {
 
 
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-int main() {
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    string binary; cin >> binary;
@@ -36,6 +38,7 @@ int main() {
    cout << stoi(binary, 0, 2) << endl; // approach 2
    return 0;
 }
+
 //Complexity : O(string length)
 //https://prnt.sc/oT2xQkR-mUmF
 

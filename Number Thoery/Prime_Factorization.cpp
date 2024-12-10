@@ -1,10 +1,11 @@
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-int main() {
-   ios_base::sync_with_stdio(0);
-   cin.tie(0);
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
+int32_t main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
     int n; cin >> n;
     vector<int> primes_facts;
     for(int i = 2; i * i <= n; i++) {
@@ -27,10 +28,11 @@ int main() {
 
 // // distinct prime divisors
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-int main() {
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    int n; cin >> n;
@@ -56,10 +58,11 @@ int main() {
 
 // count the each prime divisor; 
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-int main() {
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    int n; cin >> n;
@@ -84,12 +87,12 @@ int main() {
 
 
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-const int N = 1e5 + 7;
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
 int spf[N];
-int main() {
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    for(int i = 1; i < N; i++) spf[i] = i;
@@ -119,12 +122,12 @@ int main() {
 
 
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-const int N = 1e5 + 7;
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
 int spf[N];
-int main() {
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    for(int i = 1; i < N; i++) spf[i] = i;
@@ -152,12 +155,12 @@ int main() {
 
 
 //In The Name of ALLAH
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-const int N = 1e6 + 9;
-bitset<N> f; 
-int main() {
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
+bitset<N>f;
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
    f[0] = f[1] = true; 
@@ -173,9 +176,9 @@ int main() {
       if(!f[i]) prime.push_back(i);
    }
 
-   ll t; cin >> t;
-   for(ll i = 1; i <= t; i++) {
-      ll n; cin >> n;
+   int t; cin >> t;
+   for(int i = 1; i <= t; i++) {
+      int n; cin >> n;
       vector<int> ans;
       for(auto p : prime) {
          if(p * p >= n) break;

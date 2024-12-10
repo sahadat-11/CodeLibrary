@@ -1,8 +1,8 @@
 //In The Name of ALLAH
 #include<bits/stdc++.h>
 using namespace std;
-const int mod = 1e9 + 7;
-#define ll long long
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
 int digit_root(int n) {
   if(n < 10) return n;
   int sum = 0;
@@ -17,7 +17,7 @@ void solve() {
    	 cout << digit_root(i) << "\n";
    }
 }
-int main() {
+int32_t main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   int t = 1; 
@@ -32,13 +32,13 @@ int main() {
 //In The Name of ALLAH
 #include<bits/stdc++.h>
 using namespace std;
-const int mod = 1e9 + 7;
-#define ll long long
+const int N = 1e5 + 7, mod = 1e9 + 7;
+#define int long long
 void solve() {
-   ll k, x; cin >> k >> x;
+   int k, x; cin >> k >> x;
    cout << (k - 1) * 9 + x << "\n";
 }
-int main() {
+int32_t main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   int t = 1; 
